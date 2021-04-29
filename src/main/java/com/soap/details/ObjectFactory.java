@@ -38,11 +38,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeleteDetailsRequest }
+     * 
+     */
+    public DeleteDetailsRequest createDeleteDetailsRequest() {
+        return new DeleteDetailsRequest();
+    }
+
+    /**
      * Create an instance of {@link GetAllDetailsRequest }
      * 
      */
     public GetAllDetailsRequest createGetAllDetailsRequest() {
         return new GetAllDetailsRequest();
+    }
+
+    /**
+     * Create an instance of {@link DeleteDetailsResponse }
+     * 
+     */
+    public DeleteDetailsResponse createDeleteDetailsResponse() {
+        return new DeleteDetailsResponse();
     }
 
     /**

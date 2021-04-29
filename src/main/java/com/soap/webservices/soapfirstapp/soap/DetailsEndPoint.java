@@ -59,12 +59,26 @@ public class DetailsEndPoint {
     @PayloadRoot(namespace = "http://newmicroservice.com/details"
             , localPart = "GetAllDetailsRequest")
     @ResponsePayload
-    public GetAllDetailsResponse processAllGetDetailsRequest
+    public GetAllDetailsResponse processGetAllDetailsRequest
             (@RequestPayload GetAllDetailsRequest request) {
 
         List<DetailInstance> details = service.findAll();
 
         return mapAllDetailsResponse(details);
+    }
+
+    @PayloadRoot(namespace = "http://newmicroservice.com/details"
+            , localPart = "DeleteDetailsRequest")
+    @ResponsePayload
+    public DeleteDetailsResponse deleteDetailsRequest
+            (@RequestPayload DeleteDetailsRequest request) {
+
+        int status = service.deleteById(request.getId());
+
+        DeleteDetailsResponse response = new DeleteDetailsResponse();
+        response.setStatus(status);
+
+        return response;
     }
 
 }

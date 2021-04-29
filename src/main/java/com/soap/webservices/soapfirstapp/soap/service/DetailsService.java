@@ -52,9 +52,10 @@ public class DetailsService {
 
         while (iterator.hasNext()){
             DetailInstance detail = iterator.next();
-            if (detail.getId()==id)
+            if (detail.getId()==id) {
                 iterator.remove();
                 return 1;
+            }
         }
         return 0;
     }
