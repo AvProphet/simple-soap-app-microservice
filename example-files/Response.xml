@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<GetDetailsResponse xmlns="http://newmicroservice.com/details"
+                           xsi:schemaLocation="http://newmicroservice.com/details.xsd"
+                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Details>
+        <id>123</id>
+        <name>Spring Framework</name>
+        <description>Something about Spring Framework</description>
+    </Details>
+</GetDetailsResponse>
