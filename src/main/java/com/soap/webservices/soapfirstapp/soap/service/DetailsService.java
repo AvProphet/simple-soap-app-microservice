@@ -10,6 +10,10 @@ import java.util.List;
 @Component
 public class DetailsService {
 
+    public enum Status {
+        SUCCES, FAILURE;
+    }
+
     private static List<DetailInstance> details = new ArrayList<>();
 
     static {
@@ -46,7 +50,7 @@ public class DetailsService {
     //deleteDetails
     //Detail delete by Id
 
-    public int deleteById(int id) {
+    public Status deleteById(int id) {
 
         Iterator<DetailInstance> iterator = details.iterator();
 
@@ -54,10 +58,10 @@ public class DetailsService {
             DetailInstance detail = iterator.next();
             if (detail.getId()==id) {
                 iterator.remove();
-                return 1;
+                return Status.SUCCES;
             }
         }
-        return 0;
+        return Status.FAILURE;
     }
 
 }

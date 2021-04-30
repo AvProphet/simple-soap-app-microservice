@@ -51,10 +51,17 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:simpleType name="Status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUCCES"/>
+            <xs:enumeration value="FAILURE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:element name="DeleteDetailsResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="status" type="xs:int"/>
+                <xs:element name="status" type="tns:Status"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

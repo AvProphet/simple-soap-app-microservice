@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -18,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="status" type="{http://newmicroservice.com/details}Status"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,22 +35,31 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "DeleteDetailsResponse", namespace = "http://newmicroservice.com/details")
 public class DeleteDetailsResponse {
 
-    @XmlElement(namespace = "http://newmicroservice.com/details")
-    protected int status;
+    @XmlElement(namespace = "http://newmicroservice.com/details", required = true)
+    @XmlSchemaType(name = "string")
+    protected Status status;
 
     /**
      * Gets the value of the status property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Status }
+     *     
      */
-    public int getStatus() {
+    public Status getStatus() {
         return status;
     }
 
     /**
      * Sets the value of the status property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Status }
+     *     
      */
-    public void setStatus(int value) {
+    public void setStatus(Status value) {
         this.status = value;
     }
 
