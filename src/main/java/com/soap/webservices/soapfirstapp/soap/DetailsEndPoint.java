@@ -2,7 +2,7 @@ package com.soap.webservices.soapfirstapp.soap;
 
 import com.soap.details.*;
 import com.soap.webservices.soapfirstapp.soap.bean.DetailInstance;
-import com.soap.webservices.soapfirstapp.soap.exception.DeatailNotFound;
+import com.soap.webservices.soapfirstapp.soap.exception.DetailNotFound;
 import com.soap.webservices.soapfirstapp.soap.service.DetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -27,9 +27,6 @@ public class DetailsEndPoint {
     (@RequestPayload GetDetailsRequest request) {
 
         DetailInstance detail = service.findById(request.getId());
-
-        if (detail==null)
-            throw new DeatailNotFound("Invalid course Id" + request.getId());
 
         return mapDetailsResponse(detail);
     }

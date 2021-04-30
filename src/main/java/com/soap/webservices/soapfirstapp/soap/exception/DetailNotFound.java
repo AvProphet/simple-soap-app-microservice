@@ -4,11 +4,11 @@ import org.springframework.ws.soap.server.endpoint.annotation.FaultCode;
 import org.springframework.ws.soap.server.endpoint.annotation.SoapFault;
 
 @SoapFault(faultCode = FaultCode.CLIENT)
-public class DeatailNotFound extends RuntimeException {
+public class DetailNotFound extends RuntimeException {
 
     private static final long serialVersionUID = 342435354345L;
 
-    public DeatailNotFound(String s) {
+    public DetailNotFound(String s) {
         super(s);
     }
 }

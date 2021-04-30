@@ -1,6 +1,7 @@
 package com.soap.webservices.soapfirstapp.soap.service;
 
 import com.soap.webservices.soapfirstapp.soap.bean.DetailInstance;
+import com.soap.webservices.soapfirstapp.soap.exception.DetailNotFound;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class DetailsService {
             if (detail.getId()==id)
                 return detail;
         }
-        return null;
+        throw new DetailNotFound("Invalid course Id" + id);
     }
 
     //All details - 2
